@@ -23,7 +23,7 @@ class Main extends Component{
     render(){
         return(
             <SafeAreaView style={{flex:1}}>
-
+      
             </SafeAreaView>
         )
     }
