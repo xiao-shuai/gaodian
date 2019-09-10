@@ -77,6 +77,19 @@ class Relese extends Component{
           }
         });
       }
+
+    up=()=>{
+        if(this.state.con==undefined){
+            return Alert.alert('Tips','Please enter the content',[{'text':'ok'}])
+        }
+
+        Alert.alert('Tips','Successful publishing, quality content will be prioritized',[{'text':'ok'}])
+
+        fetch('https://www.fastmock.site/mock/a714e9c2b1cb027f235d6991f2b4b3f1/pastry/uppoad',{method:'POST'})
+        .then(res=>res.json())
+        .then()
+        .catch()
+    }  
     render(){
         
         return (
@@ -99,6 +112,9 @@ class Relese extends Component{
 
           <View style={{marginLeft:'4%',marginTop:20}}>
           <Text style={{fontSize:18,color:'#797D7F'}}>Picture upload</Text>  
+           <TouchableOpacity onPress={()=>{
+               this.choosePicker()
+           }}>
            {
                this.state.iscover?
                <Image source={{uri:this.state.img}} style={{width:gao.w*.3,
@@ -109,14 +125,19 @@ class Relese extends Component{
                 <Image source={require('../img/tp.png')} style={{width:gao.w*.3,
                     height:gao.w*.3,
                     marginTop:20}}
-                    />
+                />
            }
+           </TouchableOpacity>
            
           </View>
 
          <Button title='Publish immediately' style={{
              width:'92%',marginLeft:'4%',marginTop:20,
-         }} buttonStyle={{backgroundColor:gao.theme}}/>
+         }} buttonStyle={{backgroundColor:gao.theme}} 
+           onPress={()=>{
+             this.up()
+           }}
+         />
         
         </SafeAreaView>
         )

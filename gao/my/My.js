@@ -14,7 +14,9 @@ import {gao} from '../sty/sty'
 import { Divider ,Button} from 'react-native-elements'
 import  Ionicons from 'react-native-vector-icons/Ionicons'
 import { NavigationActions } from 'react-navigation';
-
+import {inject,observer} from 'mobx-react'
+@inject(["mbx"])
+@observer // 监听当前组件
 class My extends Component{
 
     constructor(props){
@@ -28,15 +30,25 @@ exit_out=()=>{
     AsyncStorage.removeItem('ok')
 }
     render(){
+        const login=this.props.mbx.login
         return(
             <SafeAreaView style={{flex:1}}>
                <View style={{width:gao.w,height:gao.h*.25,backgroundColor:gao.theme,
               alignItems:'center',justifyContent:'center'
             }}>
-              <Image source={{uri:'https://c-ssl.duitang.com/uploads/item/201608/28/20160828091235_EdXQA.thumb.700_0.jpeg'}}
+                {
+                  login?  
+             <Image source={{uri:'https://c-ssl.duitang.com/uploads/item/201608/28/20160828091235_EdXQA.thumb.700_0.jpeg'}}
                style={{
                   width:gao.w*.26,height:gao.w*.26,borderRadius:gao.w*.13
               }}/>
+              :
+              <Image source={require('../img/wdl.png')}
+               style={{
+                  width:gao.w*.26,height:gao.w*.26,borderRadius:gao.w*.13
+              }}/>
+                }
+              
               <Text style={{fontSize:20,color:'white',marginTop:10,fontWeight:'500'}}>Eat sugar</Text>
               <Text style={{marginTop:10,color:'white'}}>The man was lazy and left nothing behind.</Text>
                </View>
