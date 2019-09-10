@@ -7,8 +7,9 @@ import Shequ from '../shequ/Shequ'
 import My from '../my/My'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {gao} from '../sty/sty'
-
-
+import Relese from '../main/Relese'
+import Login from '../login/Login'
+import New from '../login/New'
 const SOME=createBottomTabNavigator(
     {
         Main: Main,
@@ -53,14 +54,10 @@ const SOME=createBottomTabNavigator(
        headerBackTitle:null,
    })
     },
-    //  Main:{
-    //      screen:Main,
-    //      navigationOptions:()=>({
-    //          header:null,
-    //          headerBackTitle:null,
-    //      })
-    //    },
-       
+    Relese:{screen:Relese},
+    Login:{screen:Login},
+    New:{screen:New}
+
    
   })   
 

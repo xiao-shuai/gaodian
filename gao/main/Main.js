@@ -7,10 +7,11 @@ import {
     ScrollView,
     StyleSheet,
     ActivityIndicator,
-    TextInput,AsyncStorage,
+    TextInput,AsyncStorage,StatusBar,
     SafeAreaView,Alert,Linking,Modal,ProgressViewIOS
 } from 'react-native'
 import Swiper from 'react-native-swiper'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import {gao} from '../sty/sty'
 class Main extends Component{
 
@@ -19,9 +20,21 @@ class Main extends Component{
         this.state={
 
         }
+        
     }
-
+componentWillMount(){
+  AsyncStorage.getItem('ok')
+  .then(res=>{
+      console.log('qq:',res);
+      if(res==null){
+          
+      }
+      
+  })
+  .catch()   
+}
     render(){
+
         const aa=[
             {
               img:'https://c-ssl.duitang.com/uploads/item/201706/13/20170613200830_hHMLZ.thumb.700_0.jpeg',
@@ -70,7 +83,9 @@ class Main extends Component{
               },
         ]
         return(
+
             <SafeAreaView style={{flex:1}}>
+
              <ScrollView>
                  
             <View style={{height:gao.h*.25}}>
@@ -107,6 +122,15 @@ class Main extends Component{
               }
               </View>
              </ScrollView>  
+             <TouchableOpacity onPress={()=>{
+                  this.props.navigation.navigate('Relese')
+             }}>
+                 <Ionicons name='ios-add-circle' style={{
+                     fontSize:50,color:gao.theme,
+                     position:'absolute',bottom:80,
+                     right:20
+                 }}/>
+             </TouchableOpacity>
             </SafeAreaView>
         )
     }
