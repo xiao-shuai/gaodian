@@ -25,6 +25,7 @@ class My extends Component{
 
         }
     }
+
 exit_out=()=>{
     this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Login' })], 0)
     AsyncStorage.removeItem('ok')
@@ -48,9 +49,16 @@ exit_out=()=>{
                   width:gao.w*.26,height:gao.w*.26,borderRadius:gao.w*.13
               }}/>
                 }
-              
+              {
+                  login?
+             <View style={{alignItems:'center'}}>
               <Text style={{fontSize:20,color:'white',marginTop:10,fontWeight:'500'}}>Eat sugar</Text>
               <Text style={{marginTop:10,color:'white'}}>The man was lazy and left nothing behind.</Text>
+              </View>
+              :
+              <Text style={{marginTop:10,color:'white'}}>Not logged in</Text>
+              }
+              
                </View>
                <Divider style={{width:'100%',height:15,backgroundColor:'#F2F3F4'}}/>
                
@@ -65,26 +73,32 @@ exit_out=()=>{
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
                }}>
-                   <Text style={{fontSize:18,color:'#797D7F'}}>My release</Text>
+                   <Text style={{fontSize:18,color:'#797D7F'}}>My compliments</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
                </TouchableOpacity>
                <TouchableOpacity style={{flexDirection:'row',
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
                }}>
-                   <Text style={{fontSize:18,color:'#797D7F'}}>My release</Text>
+                   <Text style={{fontSize:18,color:'#797D7F'}}>My favorite</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
                </TouchableOpacity>
                <TouchableOpacity style={{flexDirection:'row',
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
                }}>
-                   <Text style={{fontSize:18,color:'#797D7F'}}>My release</Text>
+                   <Text style={{fontSize:18,color:'#797D7F'}}>My opinion</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
                </TouchableOpacity>
            <Button buttonStyle={{width:'92%',marginLeft:'4%',marginTop:25,backgroundColor:gao.theme}} 
-             title='log'
+             title={
+                 login?
+                 'Sign out'
+                 :
+                 'Please login'
+             }
              onPress={()=>{
+
                this.exit_out()
              }}
            />
