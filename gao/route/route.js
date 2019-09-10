@@ -10,6 +10,7 @@ import {gao} from '../sty/sty'
 import Relese from '../main/Relese'
 import Login from '../login/Login'
 import New from '../login/New'
+import Mainxq from '../main/Mainxq'
 const SOME=createBottomTabNavigator(
     {
         Main: Main,
@@ -56,7 +57,8 @@ const SOME=createBottomTabNavigator(
     },
     Relese:{screen:Relese},
     Login:{screen:Login},
-    New:{screen:New}
+    New:{screen:New},
+    Mainxq:{screen:Mainxq}
 
    
   })   

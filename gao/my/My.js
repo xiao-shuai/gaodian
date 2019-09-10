@@ -25,6 +25,7 @@ class My extends Component{
     }
 exit_out=()=>{
     this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Login' })], 0)
+    AsyncStorage.removeItem('ok')
 }
     render(){
         return(

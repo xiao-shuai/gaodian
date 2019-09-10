@@ -24,12 +24,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import SOME_PAGE from './gao/route/route'
-
+import {Provider} from 'mobx-react'
+import store from './gao/data/data'
 console.disableYellowBox=true
 
 const App = () => {
   return (
+    <Provider {...store}>
     <SOME_PAGE />
+    </Provider>
   );
 };
 

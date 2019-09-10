@@ -12,6 +12,8 @@ import {
 } from 'react-native'
 import {gao} from '../sty/sty'
 import {Button} from 'react-native-elements'
+import ImagePicker from 'react-native-image-picker';
+
 class Relese extends Component{
     static navigationOptions = {
         title: 'relese',
@@ -24,10 +26,57 @@ class Relese extends Component{
     constructor(props){
        super(props)
        this.state={
-
+        iscover:false
        }
+       this.option={
+
+        title: 'Choose picture',
+        
+        cancelButtonTitle: 'cancel',
+        
+        takePhotoButtonTitle:'Taking pictures',
+        
+        chooseFromLibraryButtonTitle:'gallery',
+        
+        allowsEditing:true,
+        
+        quality: 0.8,
+        
+        noData: false,
+        
+        storageOptions: {
+        
+        skipBackup: true,
+        
+        path: 'images'
+        
+        }
+        
+        }
     }
-  
+    choosePicker = () => {
+        ImagePicker.showImagePicker(this.option, (response) => {
+          console.log('Response = ', response);
+          if (response.didCancel) {
+            console.log('User cancelled image picker');
+          }
+          else if (response.error) {
+            console.log('ImagePicker Error: ', response.error);
+          }
+          else if (response.customButton) {
+            console.log('User tapped custom button: ', response.customButton);
+          }
+          else {
+            console.log('source--!!')
+            let source = response.uri;
+            // this.props.oneStore.change_tx(source)
+            this.setState({
+              iscover: true,
+               img:source,
+            })
+          }
+        });
+      }
     render(){
         
         return (
@@ -41,15 +90,28 @@ class Relese extends Component{
           marginLeft:'4%'
 
           }}>
-          <TextInput style={{height:'100%'}} multiline={true}/>
+          <TextInput style={{height:'100%'}} multiline={true} 
+            onChangeText={(con)=>{
+                this.setState({con})
+            }}
+          />
           </View>
 
           <View style={{marginLeft:'4%',marginTop:20}}>
           <Text style={{fontSize:18,color:'#797D7F'}}>Picture upload</Text>  
-           <Image source={require('../img/tp.png')} style={{width:gao.w*.3,
-            height:gao.w*.3,
-            marginTop:20}}
-            /> 
+           {
+               this.state.iscover?
+               <Image source={{uri:this.state.img}} style={{width:gao.w*.3,
+                height:gao.w*.3,
+                marginTop:20}}
+                />
+                :
+                <Image source={require('../img/tp.png')} style={{width:gao.w*.3,
+                    height:gao.w*.3,
+                    marginTop:20}}
+                    />
+           }
+           
           </View>
 
          <Button title='Publish immediately' style={{
