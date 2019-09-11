@@ -19,7 +19,13 @@ import {inject,observer} from 'mobx-react'
 @inject(["mbx"])
 @observer // 监听当前组件
 class Shequxq extends Component{
-
+    static navigationOptions = {
+        title: 'Community details',
+        headerStyle: {
+            backgroundColor: gao.theme,
+          },
+          headerTintColor: '#fff',
+      };
     constructor(props){
 
         super(props)

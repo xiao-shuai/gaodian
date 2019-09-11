@@ -79,17 +79,17 @@ componentWillMount(){
                 hot:'234'  
               },
               {
-                img:'https://c-ssl.duitang.com/uploads/item/201508/15/20150815155144_Pd3sn.thumb.700_0.jpeg',
+                img:'https://c-ssl.duitang.com/uploads/item/201801/02/20180102033254_iEPwV.thumb.700_0.jpeg',
                 tit:'Cakes and Pastries',
                 hot:'233'  
               },
               {
-                img:'https://c-ssl.duitang.com/uploads/item/201504/15/20150415H1746_tjWdz.thumb.700_0.jpeg',
+                img:'https://c-ssl.duitang.com/uploads/item/201704/10/20170410170512_NzuBV.thumb.700_0.jpeg',
                 tit:'Cakes and Pastries',
                 hot:'234'  
               },
               {
-                img:'https://c-ssl.duitang.com/uploads/item/201504/15/20150415H1746_tjWdz.thumb.700_0.jpeg',
+                img:'https://c-ssl.duitang.com/uploads/item/201506/15/20150615103608_f8rYx.thumb.700_0.jpeg',
                 tit:'Cakes and Pastries',
                 hot:'234'  
               },

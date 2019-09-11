@@ -12,6 +12,8 @@ import Login from '../login/Login'
 import New from '../login/New'
 import Mainxq from '../main/Mainxq'
 import Shequxq from '../shequ/Shequxq'
+import Sug from '../my/Sug'
+import My_relese from '../my/My_relese'
 const SOME=createBottomTabNavigator(
     {
         Main: Main,
@@ -60,7 +62,9 @@ const SOME=createBottomTabNavigator(
     Login:{screen:Login},
     New:{screen:New},
     Mainxq:{screen:Mainxq},
-    Shequxq:{screen:Shequxq}
+    Shequxq:{screen:Shequxq},
+    Sug:{screen:Sug},
+    My_relese:{screen:My_relese}
 
    
   })   

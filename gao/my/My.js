@@ -25,7 +25,11 @@ class My extends Component{
 
         }
     }
-
+    login=()=>{
+        Alert.alert('Tips','Please log in and do it again.',[{'text':'Later on'},{'text':'ok',onPress:()=>{
+          this.props.navigation.navigate('Login')
+        }}])
+    }         
 exit_out=()=>{
     this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Login' })], 0)
     AsyncStorage.removeItem('ok')
@@ -65,6 +69,11 @@ exit_out=()=>{
                <TouchableOpacity style={{flexDirection:'row',
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
+               }} onPress={()=>{
+                   login?
+                   this.props.navigation.navigate('My_relese')
+                   :
+                   this.login()
                }}>
                    <Text style={{fontSize:18,color:'#797D7F'}}>My release</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
@@ -72,22 +81,34 @@ exit_out=()=>{
                <TouchableOpacity style={{flexDirection:'row',
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
-               }}>
+               }} onPress={()=>{
+                login?
+                this.props.navigation.navigate('My_relese')
+                :
+                this.login()
+            }}>
                    <Text style={{fontSize:18,color:'#797D7F'}}>My compliments</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
                </TouchableOpacity>
                <TouchableOpacity style={{flexDirection:'row',
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
-               }}>
+               }} onPress={()=>{
+                login?
+                this.props.navigation.navigate('My_relese')
+                :
+                this.login()
+            }}>
                    <Text style={{fontSize:18,color:'#797D7F'}}>My favorite</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
                </TouchableOpacity>
                <TouchableOpacity style={{flexDirection:'row',
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
+               }} onPress={()=>{
+                   this.props.navigation.navigate('Sug')
                }}>
-                   <Text style={{fontSize:18,color:'#797D7F'}}>My opinion</Text>
+                   <Text style={{fontSize:18,color:'#797D7F'}}>My suggestion</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
                </TouchableOpacity>
            <Button buttonStyle={{width:'92%',marginLeft:'4%',marginTop:25,backgroundColor:gao.theme}} 

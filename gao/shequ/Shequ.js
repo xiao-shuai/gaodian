@@ -19,7 +19,13 @@ import {inject,observer} from 'mobx-react'
 @inject(["mbx"])
 @observer // 监听当前组件
 class Shequ extends Component{
-
+    static navigationOptions = {
+        title: 'Community',
+        headerStyle: {
+            backgroundColor: gao.theme,
+          },
+          headerTintColor: '#fff',
+      };
     constructor(props){
         super(props)
         this.state={
@@ -85,7 +91,10 @@ class Shequ extends Component{
     i.con_img.map((m,k)=>{
 return (
     <TouchableOpacity onPress={()=>{
-
+        login?
+        this.props.navigation.navigate('Shequxq',{info:i})
+        :
+        this.login()
     }}>
         <Image source={{uri:m.img}} 
          style={{width:gao.w*.28,height:gao.w*.28}}
