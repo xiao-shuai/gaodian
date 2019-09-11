@@ -44,6 +44,14 @@ class Shequ extends Component{
         .then()
         .catch()
     }    
+    componentDidMount(){
+        fetch('https://www.fastmock.site/mock/a714e9c2b1cb027f235d6991f2b4b3f1/pastry/get_myrelise')
+        .then(res=>res.json())
+        .then(res=>{
+
+        })
+        .catch()
+    }
     render(){
         const login=this.props.mbx.login
         const data=this.props.mbx.data

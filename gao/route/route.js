@@ -33,7 +33,7 @@ const SOME=createBottomTabNavigator(
               // You can check the implementation below.
             //   IconComponent = HomeIconWithBadge; 
             } else if (routeName === 'Shequ') {
-                 iconName = `calendar`;
+                 iconName = `charity`;
             } else if (routeName==='My'){
                  iconName=`account`
             }
