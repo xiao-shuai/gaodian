@@ -15,6 +15,7 @@ import { Divider ,Button} from 'react-native-elements'
 import  Ionicons from 'react-native-vector-icons/Ionicons'
 import { NavigationActions } from 'react-navigation';
 import {inject,observer} from 'mobx-react'
+import Login from '../login/Login'
 @inject(["mbx"])
 @observer // 监听当前组件
 class My extends Component{
@@ -106,7 +107,10 @@ exit_out=()=>{
                justifyContent:'space-between',padding:20,
                borderBottomWidth:1,borderBottomColor:'#F2F3F4'
                }} onPress={()=>{
+                   login?
                    this.props.navigation.navigate('Sug')
+                   :
+                   this.login()
                }}>
                    <Text style={{fontSize:18,color:'#797D7F'}}>My suggestion</Text>
                    <Ionicons  name='ios-arrow-forward'  style={{fontSize:25,color:'#A6ACAF'}}/>
