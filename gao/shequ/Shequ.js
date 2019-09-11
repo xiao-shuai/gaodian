@@ -119,7 +119,7 @@ return (
                      login?
                      this.warn()
                      :
-                     ''
+                     this.login()
                  }}>
                   <AntDesign name='warning' style={{fontSize:18,color:'#909497'}} />
                  </TouchableOpacity>
@@ -132,7 +132,10 @@ return (
                   <AntDesign name='message1' style={{fontSize:18,color:'#909497'}} />
                  </TouchableOpacity>
                  <TouchableOpacity onPress={()=>{
-                    this.props.mbx.zan(k)
+                     login?
+                     this.props.mbx.zan(k)
+                    :
+                    this.login()
                  }}>
                   <AntDesign name='like1' style={{fontSize:18,color:i.zan?'red':'#909497'}} />
                  </TouchableOpacity>
