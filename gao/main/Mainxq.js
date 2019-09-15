@@ -48,20 +48,45 @@ class Mainxq extends Component {
                   <Text style={{fontSize:18,fontWeight:'500',color:'#797D7F'}}>pastry- Delicious</Text>
               }
 
-
-             <Text style={{marginTop:20,lineHeight:20,color:'#A6ACAF',fontSize:16}}>
-             Ancient early taste refers to nostalgia. It is the dialect of southern Fujian. In the early days, due to the underdeveloped food industry, many delicacies were made of pure natural food, based on hand-made, with a simple and delicious taste. On the contrary, as productivity has increased, the quality of food produced in batches has declined, so people are more nostalgic for early food. Strictly speaking, the ancient premature cake is not a type of cake, but because this kind of cake began to spread from southern Fujian to all parts of the country, so many people are accustomed to calling it this way.
+               {
+                   s==undefined?
+                   <Text style={{marginTop:20,lineHeight:20,color:'#A6ACAF',fontSize:16}}>
+           {info.con}
              </Text>
+             :
+             <Text style={{marginTop:20,lineHeight:20,color:'#A6ACAF',fontSize:16}}>
+           In 2004, when two young people were worried about what they ate for three meals a day, they created a small personal website.
+Unexpectedly, this tiny seed has been loved and cared for by countless people, and has grown into a popular food network.
+At present, our registered users exceed 10 million, and more than 3 million people use our services every day. Food users in the world mainly come from northern Shangguangshen and coastal provinces and municipalities. They live happily and enjoy sharing. They are more willing to cook soup for the love of washing hands.
+I'm glad you call us "Beautiful Sky". I hope this seedling can grow into a big tree, with abundant branches and leaves, and red fruits.
+Let's continue our wonderful journey to heaven.
+             </Text>
+
+               }
+             
              {
                  s==undefined?
                  <Image source={{uri:info.img}} style={{width:'100%',height:gao.h*.24,borderRadius:8,marginTop:20}}/>
                  :
                  <Image source={info} style={{width:'100%',height:gao.h*.24,borderRadius:8,marginTop:20}}/>
              }
-             
-             <Text style={{marginTop:20,lineHeight:20,color:'#A6ACAF',fontSize:16}}>
-             In terms of raw materials, the proportion of oil added to the cake is relatively high, and the baking percentage is usually more than 70%. Higher oil content has two advantages: first, it is easier to handle hot noodles; second, oil can soften the cake and make it softer. The sugar content of the cake is also higher. According to the proportion of protein, 45%-50% fine sugar can be used. The more sugar, the more protein foaming will be inhibited, so that the degree of expansion of the cake will be affected, in addition, the more water-holding capacity of the cake, so it will be relatively wet.
+             {
+                 s==undefined?
+                 <Text style={{marginTop:20,lineHeight:20,color:'#A6ACAF',fontSize:16}}>
+              {info.con2}
              </Text>
+             :
+             <Text style={{marginTop:20,lineHeight:20,color:'#A6ACAF',fontSize:16}}>
+              In the world of gourmet food, you can know the ingredients and learn recipes.
+From Xiaobai to Dacai, then the brain hole opens to surprise the whole audience; or challenge baking, sweetness fills the room.
+Everyone is a gourmet. You are welcome to join us.——
+The recipes here are all created by you, me and him. Welcome to share your specialties!
+You can also talk about cooking, share your family's breakfast, the food you eat, and all kinds of good things about life.
+You can also create your favorite recipes and menus, which belong to your knowledge album.
+Every time I participate, I help others.
+             </Text>
+             }
+             
           </ScrollView>
          </SafeAreaView>
          )
