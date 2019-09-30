@@ -109,10 +109,7 @@ class New extends Component{
                       this.go_login()
                   }}
                 />
-                <TouchableOpacity>
-                    <Text style={{fontSize:18,marginTop:20,color:gao.theme}}>No account. Register.</Text>
-                </TouchableOpacity>
-
+               
                 <TouchableOpacity onPress={()=>{
                     Linking.openURL('https://shimo.im/docs/YrVGjGR66VGYCTp3')
                 }}>
